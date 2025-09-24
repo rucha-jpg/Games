@@ -1,5 +1,5 @@
 import random
-import game_data
+from game_data import data
 
 input("Let's start! Press Enter.")
 
@@ -13,8 +13,8 @@ while play_again:
         if y == x:
             y = random.randint(0, 49)
 
-        answer_a = game_data.data[x]['follower_count']
-        answer_b = game_data.data[y]['follower_count']
+        answer_a = data[x]['follower_count']
+        answer_b = data[y]['follower_count']
         highest = ""
         if answer_b > answer_a:
             highest = "b"
@@ -22,9 +22,9 @@ while play_again:
             highest = "a"
 
         print("COMPARE:")
-        print(f"A: {game_data.data[x]['name']}, a {game_data.data[x]['description']}, from {game_data.data[x]['country']}")
+        print(f"A: {data[x]['name']}, a {data[x]['description']}, from {data[x]['country']}")
         print("VS")
-        print(f"B: {game_data.data[y]['name']}, a {game_data.data[y]['description']}, from {game_data.data[y]['country']}")
+        print(f"B: {data[y]['name']}, a {data[y]['description']}, from {data[y]['country']}")
 
         guess = input("Who has the highest followers? A or B? ").lower()
 
